@@ -60,12 +60,40 @@ body {
   font-size: 60px;
   font-weight: 400;
   letter-spacing: 35px;
+  animation-name: moveInLeft;
+  animation-duration: 1s;
+  animation-timing-function: ease-out;
+}
+@keyframes moveInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-200px);
+  }
+  80% {
+    transform: translateX(10px)
+  }
+  100% {
+    transform: translateX(0);
+  }
 }
 .heading-primary-sub {
   display: block;
   font-size: 20px;
   font-weight: 700;
   letter-spacing: 17.4px;
+  animation: moveInRight 1s ease-out;
+}
+@keyframes moveInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(100px);
+  }
+  80% {
+    transform: translateX(-10px)
+  }
+  100% {
+    transform: translateX(0);
+  }
 }
 
 .btn:link,
@@ -90,7 +118,7 @@ body {
   background-color: #fff;
   color: #777;
 }
-.btn::after {
+/* .btn::after {
   content: "";
   display: inline-block;
   height: 100%;
@@ -101,7 +129,23 @@ body {
   left: 0;
   z-index: -1;
   transition: all 0.4s;
-}
+} */
 .btn-white::after {
   background-color: #fff;
+}
+.btn-animated {
+  animation: moveFromBottom 1s ease-out 0.75s;
+  animation-fill-mode: backwards;
+}
+@keyframes moveFromBottom {
+  0% {
+    opacity: 0;
+    transform: translateY(200px);
+  }
+  80% {
+    transform: translateY(-40px)
+  }
+  100% {
+    transform: translateY(0);
+  }
 }
